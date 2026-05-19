@@ -1,3 +1,9 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,9 +40,8 @@ body {
 
 /* Product container */
 .container {
-  display: flex;
+  @include flex-center;
   align-items: flex-start;
-  justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
 }

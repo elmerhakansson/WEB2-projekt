@@ -5,6 +5,13 @@ $slider-width: 800px;
 $slider-height: 600px;
 $border-size: 3px;
 
+/* MIXIN */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -45,8 +52,7 @@ body {
 
 /* Content */
 .content {
-  display: flex;
-  justify-content: center;
+  @include flex-center;
 }
 
 /* Slideshow */
@@ -54,9 +60,7 @@ body {
   width: $slider-width;
   height: $slider-height;
   border: $border-size solid $main-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   overflow: hidden;
   position: relative;
 
@@ -92,6 +96,6 @@ body {
   }
 
   .bootstrap-zone {
-  all: revert;
-}
+    all: revert;
+  }
 }

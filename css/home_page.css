@@ -1,3 +1,6 @@
+/* home_page.css */
+
+/* MIXIN */
 * {
   box-sizing: border-box;
 }
@@ -9,23 +12,28 @@ body {
   background: #ffffff;
 }
 
-/* Header */
+/* HEADER */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(20px, 4vw, 40px);
 }
 
 .header .logo {
-  max-width: 250px;
+  width: clamp(140px, 30vw, 250px);
   height: auto;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
+}
+
+.header .nav {
+  text-align: center;
 }
 
 .header .nav a {
   margin: 0 10px;
   text-decoration: none;
   color: #000;
+  font-family: "Courier New", Courier, monospace;
   font-size: 16px;
 }
 
@@ -33,24 +41,28 @@ body {
   text-decoration: underline;
 }
 
+.header .nav a.active {
+  font-weight: bold;
+}
+
 /* Content */
 .content {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Slideshow */
 .slideshow {
   width: 800px;
   height: 600px;
-  border: 3px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
+  
 }
-
 .slideshow img {
   max-width: 100%;
   max-height: 100%;
@@ -61,12 +73,11 @@ body {
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
 }
-
 .slideshow img.active {
   opacity: 1;
 }
 
-/* Fade in */
+/* Fade in transition */
 #page-transition {
   position: fixed;
   inset: 0;
@@ -76,78 +87,12 @@ body {
   transition: opacity 0.6s ease;
   z-index: 9999;
 }
-
 #page-transition.active {
   opacity: 1;
   pointer-events: all;
 }
-
-/* Tablet */
-@media (max-width: 1024px) {
-  body {
-    padding: 15px;
-  }
-
-  .header {
-    margin-bottom: 30px;
-  }
-
-  .header .logo {
-    max-width: 200px;
-  }
-
-  .header .nav a {
-    font-size: 15px;
-    margin: 0 8px;
-  }
-
-  .slideshow {
-    width: 100%;
-    max-width: 700px;
-    height: 500px;
-  }
+#page-transition .bootstrap-zone {
+  all: revert;
 }
 
-/* Phones */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  .header {
-    margin-bottom: 20px;
-  }
-
-  .header .logo {
-    max-width: 180px;
-    margin-bottom: 15px;
-  }
-
-  .header .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .header .nav a {
-    margin: 0;
-    font-size: 14px;
-  }
-
-  .content {
-    width: 100%;
-  }
-
-  .slideshow {
-    width: 50%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-  }
-
-  .slideshow img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
+/*# sourceMappingURL=home_page.css.map */

@@ -46,19 +46,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 50vh;       /* half viewport height for vertical centering */
     text-align: center;
 }
 
-/* Confirmation msg */
+/* Confirmation message */
 .order_confirmed {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace; /* match site font */
     font-size: 36px;
     line-height: 1.5;
 }
 
-
-/* TABLET */
+/* =========================
+   TABLET (≤ 1024px)
+========================= */
 @media (max-width: 1024px) {
   body {
     padding: 15px;
@@ -82,7 +83,9 @@ body {
   }
 }
 
-/* PHONE */
+/* =========================
+   PHONE (≤ 768px)
+========================= */
 @media (max-width: 768px) {
   body {
     padding: 10px;
@@ -112,7 +115,6 @@ body {
     height: auto;
     min-height: 60vh;
     padding: 20px 10px;
-    flex-direction: column;
   }
 
   .order_confirmed {
